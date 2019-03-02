@@ -33,6 +33,8 @@ for ( let point of iPs) {
   iP.click( function() {
     let sibling = this.nextElementSibling
     closeVideos();
+    let audio = document.querySelector('#buttonSound');
+    audio.play();
     sibling.toggleClass('open');
   })
 };

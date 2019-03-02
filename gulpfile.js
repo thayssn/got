@@ -3,10 +3,12 @@ const bs = require('browser-sync').create(),
       sass = require('gulp-sass'),
       babel = require('gulp-babel'),
       pug = require('gulp-pug');
+
 const PUBLIC_DIR = './public';
 const STATIC_DIR = './public/static';
 const TEMPLATES_DIR = './templates';
 const SRC_DIR = './src';
+const MEDIA_DIR = './media';
 
 // Local Server
 const serve = () => {
@@ -48,7 +50,11 @@ const img = () =>
   src(`${SRC_DIR}/img/**/**`)
     .pipe( dest(`${STATIC_DIR}/img`) )
 
-const build = series(parallel(html, css, js, img), serve)
+const media = () =>
+src(`${MEDIA_DIR}/**/**`)
+  .pipe( dest(`${STATIC_DIR}/media`) )
+
+const build = series(parallel(html, css, js, img, media), serve)
 
 module.exports = {
   serve,
