@@ -4,34 +4,35 @@ html
     body
         h1.title Game of Thrones
 
-        div#scene
-            div(data-depth="1").layer
-                div.container
-                    p.element
-                        img(src='/static/img/1.png')
-                    div#tv1.tvshow
-                        <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/16vsihU4NBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        div#scene__wrapper
+            div#scene
+                div(data-depth="1").layer
+                    div.container
+                        p.element
+                            img(src='/static/img/1.png')
+                        div.video
+                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/16vsihU4NBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            div(data-depth="3").layer
-                div.container
-                    p.element
-                        img(src='/static/img/2.png')
-                    div#tv2.tvshow
-                        <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/klgCelGCAvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                div(data-depth="3").layer
+                    div.container
+                        p.element
+                            img(src='/static/img/2.png')
+                        div.video
+                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/klgCelGCAvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            div(data-depth="10").layer
-                div.container
-                    p.element
-                        img(src='/static/img/3.png')
-                    div#tv3.tvshow
-                        <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                div(data-depth="2").layer
+                    div.container
+                        p.element
+                            img(src='/static/img/3.png')
+                        div.video
+                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            div(data-depth="10").layer
-                div.container
-                    p.element
-                        img(src='/static/img/4.png')
-                    div#tv4.tvshow
-                        <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                div(data-depth="2").layer
+                    div.container
+                        p.element
+                            img(src='/static/img/4.png')
+                        div.video
+                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         audio(src='/static/media/theme.mp3', loop)#themesong
         audio(src='/static/media/button.mp3')#buttonSound

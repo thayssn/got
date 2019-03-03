@@ -1,7 +1,7 @@
-const iPs = document.querySelectorAll('#scene .element');
-const allVideos = document.querySelectorAll('.tvshow');
+const iPs = document.querySelectorAll('#scene .container');
+const allVideos = document.querySelectorAll('.video');
 
-function interactivePoint(selector){
+function InteractivePoint(selector){
   const element = (typeof selector === 'string')
     ? document.querySelector(selector)
     : selector
@@ -28,10 +28,10 @@ function closeVideos(){
 }
 
 for ( let point of iPs) {
-  let iP = new interactivePoint(point);
+  let iP = new InteractivePoint(point);
 
   iP.click( function() {
-    let sibling = this.nextElementSibling
+    let sibling = this.querySelector('.video')
     closeVideos();
     let audio = document.querySelector('#buttonSound');
     audio.play();

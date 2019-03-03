@@ -1,0 +1,30 @@
+.video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  position: absolute;
+  animation: close 0.3s forwards;
+  width: 53vmin;
+  height: 30vmin;
+  z-index: 10;
+  opacity: 0;
+
+  &.open{
+    animation: open 0.3s forwards;
+    width: 0;
+    height: 0;
+    opacity: 1;
+
+  }
+
+  .content{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 53vmin;
+    height: 30vmin;
+  }
+}
