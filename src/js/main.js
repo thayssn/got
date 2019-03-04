@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
   console.log('all loaded');
 
+  const themeSong = document.querySelector('#themesong');
   const iPs = document.querySelectorAll('#scene .container');
 
   // Create the interactive points
@@ -15,6 +16,7 @@ window.addEventListener('load', () => {
         let audio = document.querySelector('#buttonSound');
         closeAllVideos();
         audio.play();
+        changeVolume(themeSong, true);
         video.yt.playVideo();
         video.toggleClass('open');
       })
@@ -28,22 +30,43 @@ window.addEventListener('load', () => {
 
     if(!container && !hasContainerClass){
       closeAllVideos();
+      changeVolume(themeSong, false)
     }
   });
 
+  // Start the page
   openCourtains();
-})
 
-function openCourtains(){
-  let themeSong = document.querySelector('#themesong');
-  themeSong.play();
-}
 
-function closeAllVideos(){
-  const videos = document.querySelectorAll('.video');
-
-  for (let video of videos){
-    video.yt.stopVideo();
-    video.classList.remove('open');
+  function openCourtains(){
+    themeSong.play();
   }
-}
+
+  function closeAllVideos(){
+    const videos = document.querySelectorAll('.video');
+
+    for (let video of videos){
+      video.yt.stopVideo();
+      video.classList.remove('open');
+    }
+  }
+
+  function changeVolume(audio, mute){
+    const duration = 1000;
+    let start = null;
+
+    if(mute && audio.volume > 0 || !mute && audio.volume < 1){
+      function change(timestamp){
+        if(!start) start = timestamp;
+        let progress = timestamp - start;
+
+        let currentVolume = (mute) ? 1 - (progress/duration) : (progress/duration);
+        audio.volume = currentVolume.toFixed(1);
+        if(progress < duration){
+          window.requestAnimationFrame(change)
+        }
+      }
+      window.requestAnimationFrame(change);
+    }
+  }
+})
