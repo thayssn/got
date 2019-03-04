@@ -3,6 +3,7 @@ html
     include structure/head.pug
     body
         h1.title Game of Thrones
+        div#player
 
         div#scene__wrapper
             div#scene
@@ -11,34 +12,36 @@ html
                         p.element
                             img(src='/static/img/1.png')
                         div.video
-                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/16vsihU4NBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            div(data-yt='16vsihU4NBw').player
 
                 div(data-depth="3").layer
                     div.container
                         p.element
                             img(src='/static/img/2.png')
                         div.video
-                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/klgCelGCAvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            div(data-yt='klgCelGCAvU').player
 
                 div(data-depth="2").layer
                     div.container
                         p.element
                             img(src='/static/img/3.png')
                         div.video
-                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            div(data-yt='nbx_ECdnRGQ').player
 
                 div(data-depth="2").layer
                     div.container
                         p.element
                             img(src='/static/img/4.png')
                         div.video
-                            <iframe class="content" width="560" height="315" src="https://www.youtube.com/embed/nbx_ECdnRGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            div(data-yt='nbx_ECdnRGQ').player
 
         audio(src='/static/media/theme.mp3', loop)#themesong
         audio(src='/static/media/button.mp3')#buttonSound
 
-        script(src='/static/js/parallax.min.js')
+        script(src='https://www.youtube.com/iframe_api')
         script(src='/static/js/utils.js')
+        script(src='/static/js/parallax.min.js')
+        script(src='/static/js/youtube.js')
         script(src='/static/js/interactivePoints.js')
         script(src='/static/js/scenes.js')
         script(src='/static/js/main.js')
