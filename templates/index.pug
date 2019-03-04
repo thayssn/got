@@ -7,33 +7,11 @@ html
 
         div#scene__wrapper
             div#scene
-                div(data-depth="1").layer
-                    div.container
-                        p.element
-                            img(src='/static/img/1.png')
-                        div.video
-                            div(data-yt='16vsihU4NBw').player
-
-                div(data-depth="3").layer
-                    div.container
-                        p.element
-                            img(src='/static/img/2.png')
-                        div.video
-                            div(data-yt='klgCelGCAvU').player
-
-                div(data-depth="2").layer
-                    div.container
-                        p.element
-                            img(src='/static/img/3.png')
-                        div.video
-                            div(data-yt='nbx_ECdnRGQ').player
-
-                div(data-depth="2").layer
-                    div.container
-                        p.element
-                            img(src='/static/img/4.png')
-                        div.video
-                            div(data-yt='nbx_ECdnRGQ').player
+                include modules/layer.pug
+                +layer('1', '/static/img/1.png', '16vsihU4NBw' )
+                +layer('2', '/static/img/2.png', 'klgCelGCAvU' )
+                +layer('3', '/static/img/3.png', 'nbx_ECdnRGQ' )
+                +layer('4', '/static/img/4.png', 'oY1aqwCf5cA' )
 
         audio(src='/static/media/theme.mp3', loop)#themesong
         audio(src='/static/media/button.mp3')#buttonSound
