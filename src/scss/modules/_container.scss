@@ -1,0 +1,50 @@
+.container{
+  position: absolute;
+  pointer-events: all;
+  cursor: pointer;
+
+  &:hover .element{
+    transform: rotateY(15deg) rotateX(-15deg) rotateZ(15deg);
+  }
+
+  .layer:nth-child(1) &{
+    top: 25vmin;
+    left: 25vmin;
+
+    + .video{
+      top: 35vmin;
+      left: 25vmin;
+    }
+  }
+
+  .layer:nth-child(2) &{
+    top: 55vmin;
+    left: 55vmin;
+
+    + .video{
+      top: 65vmin;
+      left: 55vmin;
+    }
+  }
+
+  .layer:nth-child(3) &{
+    top: 15vmin;
+    left: 80vmin;
+
+    + .video{
+      top: 25vmin;
+      left: 80vmin;
+    }
+  }
+
+  .layer:nth-child(4) &{
+    top: 80vmin;
+    left: 25vmin;
+
+    + .video{
+      top: 90vmin;
+      left: 25vmin;
+    }
+  }
+}
+
