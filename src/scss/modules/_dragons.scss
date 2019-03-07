@@ -1,0 +1,52 @@
+#dragons {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  .dragon {
+    position: absolute;
+  }
+
+  .banguela {
+    width: 544px;
+    height: 435px;
+    background-image: url(../img/banguela.png);
+    background-size: cover;
+    bottom: 0vh;
+    right: -100vw;
+
+    &.fly {
+      animation-name: voa-banguela;
+      animation-duration: 20s;
+    }
+  }
+
+  @keyframes voa-banguela {
+    0% {
+      bottom: -450px;
+      right: -600px;
+      transform: scale(0.5) rotate(0deg);
+    }
+
+    45% {
+      bottom: 110vh;
+      transform: scale(0.5) rotate(0deg);
+      right: 100%;
+    }
+
+    55% {
+      bottom: 110vh;
+      transform: scale(1) rotate(245deg);
+      right: 50%;
+    }
+
+    100% {
+      bottom: -850px;
+      right: 50%;
+      transform: scale(1) rotate(245deg);
+    }
+  }
+}
